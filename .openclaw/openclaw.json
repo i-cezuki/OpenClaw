@@ -3,9 +3,6 @@
     "mode": "local",
     "bind": "loopback",
     "port": 18789,
-    "tailscale": {
-      "mode": "serve"
-    },
     "controlUi": {
       "allowedOrigins": ["https://katsushimac-mini.tail7815e4.ts.net"]
     },
@@ -13,12 +10,12 @@
       "token": "fuji1234",
       "allowTailscale": true
     },
-    "trustedProxies": ["0.0.0.0/0", "::/0"]
+    "trustedProxies": ["127.0.0.1", "0.0.0.0/0", "::/0"]
   },
   "agents": {
     "defaults": {
       "model": {
-        "primary": "anthropic/claude-3-5-sonnet-latest"
+        "primary": "anthropic/claude-haiku-4-5-20251001"
       }
     }
   }
