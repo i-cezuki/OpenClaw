@@ -1,0 +1,8 @@
+# Secrets
+.env
+
+# Workspace data
+workspace/
+
+# macOS
+.DS_Store

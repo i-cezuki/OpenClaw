@@ -1,0 +1,22 @@
+services:
+  openclaw:
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: openclaw_secure
+    restart: always
+    network_mode: host
+    cap_drop:
+      - ALL
+    read_only: false
+    user: "1000:1000"
+    tmpfs:
+      - /tmp:rw,nosuid,size=64M
+    command: ["node", "dist/index.js", "gateway"]
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENCLAW_GATEWAY_AUTH_TOKEN=fuji1234
+      - OPENCLAW_GATEWAY_AUTH_ALLOW_TAILSCALE=true
+      - OPENCLAW_GATEWAY_TRUSTED_PROXIES=0.0.0.0/0,::/0
+      - OPENCLAW_GATEWAY_CONTROLUI_ALLOWED_ORIGINS=https://katsushimac-mini.tail7815e4.ts.net
+    volumes:
+      - ./workspace:/app/workspace:rw
+      - ./.openclaw:/home/node/.openclaw:rw

@@ -1,0 +1,25 @@
+{
+  "gateway": {
+    "mode": "local",
+    "bind": "loopback",
+    "port": 18789,
+    "tailscale": {
+      "mode": "serve"
+    },
+    "controlUi": {
+      "allowedOrigins": ["https://katsushimac-mini.tail7815e4.ts.net"]
+    },
+    "auth": {
+      "token": "fuji1234",
+      "allowTailscale": true
+    },
+    "trustedProxies": ["0.0.0.0/0", "::/0"]
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-3-5-sonnet-latest"
+      }
+    }
+  }
+}
