@@ -1,6 +1,6 @@
 services:
   openclaw:
-    image: ghcr.io/openclaw/openclaw:latest
+    image: ghcr.io/openclaw/openclaw:2026.2.6
     container_name: openclaw_secure
     restart: always
     network_mode: host
